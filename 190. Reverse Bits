@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <cstdint>
+uint32_t reverseBits(uint32_t n) {
+    int num[32];
+    int size = sizeof(num) / sizeof(num[0]);
+    uint32_t pow = 1;
+    int i = 0, j = 0;
+    uint32_t res = 0;
+    while (i < size) {
+        num[i] = (n & 1);
+        n = n >> 1;
+        i++;
+    }
+
+    while (j < size) {
+        res += num[size - 1 - j] * (pow);
+        pow = pow * 2;
+        j++;
+    }
+
+    return res;
+
+}
