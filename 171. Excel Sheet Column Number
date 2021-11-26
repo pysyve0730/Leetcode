@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+int titleToNumber(char* columnTitle) {
+	int size = strlen(columnTitle);
+	int i = 0;
+	int j = 0;
+	long base = 1;
+	int count = 0;
+	int sum = 0;
+	while (j < size) {
+		for (i = 65; i < 65+26; i++) {
+			count++;
+			if (*(columnTitle + size - 1 - j)==i) {
+				sum += count*base;
+
+			}
+
+
+
+		}
+
+
+		base *= 26;
+		j++;
+		count = 0;
+
+	}
+	printf("%d\n", sum);
+	return sum;
+}
+
+
+void main() {
+	//char columnTitle[] = "A";
+	//char columnTitle[] = "B";
+	//char columnTitle[] = "AB";
+	//char columnTitle[] = "ZY";
+	char columnTitle[] = "FXSHRXW";
+	titleToNumber(columnTitle);
+
+
+}
