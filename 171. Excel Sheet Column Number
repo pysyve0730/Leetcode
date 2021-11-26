@@ -16,8 +16,6 @@ int titleToNumber(char* columnTitle) {
 
 			}
 
-
-
 		}
 
 
@@ -26,7 +24,6 @@ int titleToNumber(char* columnTitle) {
 		count = 0;
 
 	}
-	printf("%d\n", sum);
 	return sum;
 }
 
