@@ -31,13 +31,3 @@ int titleToNumber(char* columnTitle) {
 }
 
 
-void main() {
-	//char columnTitle[] = "A";
-	//char columnTitle[] = "B";
-	//char columnTitle[] = "AB";
-	//char columnTitle[] = "ZY";
-	char columnTitle[] = "FXSHRXW";
-	titleToNumber(columnTitle);
-
-
-}
