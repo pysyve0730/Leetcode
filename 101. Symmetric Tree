@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+  struct TreeNode {
+      int val;
+      struct TreeNode *left;
+      struct TreeNode *right;
+  };
+
+
+  bool isMirror(struct TreeNode* bnch1, struct TreeNode* bnch2) {
+      if (bnch1 == NULL && bnch2 == NULL) {
+          return true;
+      }
+
+      if ((bnch1 == NULL) ^ (bnch2 == NULL)) { //其中一個NULL，另一個非NULL，就false
+          return false;
+      }
+
+      //目前同層的數相同，左子樹的下一層左=右子樹的下一層右，左子樹的下一層右=右子樹的下一層左，即為對稱
+      return (bnch1->val == bnch2->val) && (isMirror(bnch1->left, bnch2->right) && (isMirror(bnch1->right, bnch2->left))); 
+
+
+  }
+
+bool isSymmetric(struct TreeNode* root) {
+    return isMirror(root, root);
+   
+}
