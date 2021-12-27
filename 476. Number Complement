@@ -1,0 +1,23 @@
+
+
+int findComplement(int num){
+    long base = 1;
+    int sum = 0;
+    int n = 0;
+    
+    while(num!=0){
+         if(num&1==1){
+            n = 0;
+        
+         }else{
+            n = 1;   
+    }
+    sum+=n*base;
+    base*=2;
+    num = num>>1;
+        
+        
+    }
+   return sum;
+
+}
