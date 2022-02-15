@@ -13,8 +13,8 @@ uint32_t reverseBits(uint32_t n) {
     }
 
     while (j < size) {
-        res += num[size - 1 - j] * (pow);
-        pow = pow * 2;
+        res += num[size - 1 - j] * (pow); //從LSB開始
+        pow = pow * 2; //2進制
         j++;
     }
 
