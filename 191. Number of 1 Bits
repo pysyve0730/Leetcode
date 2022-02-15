@@ -3,10 +3,10 @@ int hammingWeight(uint32_t n) {
 	int count = 0;
 
 	for (i = 0; i < 32; i++) {
-		if ((n & 1) == 1) {
-			count++;
+		if ((n & 1) == 1) { //如果與1做AND為1
+			count++; //就計算1的次數
 		}
-		n = n >> 1;
+		n = n >> 1;//每次往右移(從LSB到MSB)
 
 	}
 	
