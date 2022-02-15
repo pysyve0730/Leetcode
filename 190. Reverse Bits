@@ -3,12 +3,12 @@
 uint32_t reverseBits(uint32_t n) {
     int num[32];
     int size = sizeof(num) / sizeof(num[0]);
-    uint32_t pow = 1;
-    int i = 0, j = 0;
+    uint32_t pow = 1; //32 bits unsigned integer
+    int i = 0, j = 0; //32 bits unsigned integer
     uint32_t res = 0;
     while (i < size) {
-        num[i] = (n & 1);
-        n = n >> 1;
+        num[i] = (n & 1); //每與1做一次AND
+        n = n >> 1;  //就往右移1bits
         i++;
     }
 
