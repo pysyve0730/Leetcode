@@ -11,14 +11,12 @@ int findComplement(int num){
         
          }else{
             n = 1;   
-    }
+         }
     sum+=n*base;
     base*=2; //2進制轉回10進制
-    num = num>>1;//每次往右移1
-
-        
-        
+    num = num>>1;//每次往右移1   
     }
+    
    return sum;
 
 }
