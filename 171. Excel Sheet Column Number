@@ -19,7 +19,7 @@ int titleToNumber(char* columnTitle) {
 		}
 
 
-		base *= 26;//視為26進制
+		base *= 26;//視為26進制(LSB為字母*26^0)
 		j++;
 		count = 0;
 
