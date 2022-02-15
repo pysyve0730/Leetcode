@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int* intersect(int* nums1, int nums1Size, int* nums2, int nums2Size, int* returnSize) {
-	int numssize = nums1Size > nums2Size ? nums1Size : nums2Size;
+	int numssize = nums1Size > nums2Size ? nums1Size : nums2Size; //判斷哪個陣列大
 	int* new_num = (int*)malloc(numssize*sizeof(int));
 	int i = 0;//small
 	int j = 0;//large
