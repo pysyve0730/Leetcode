@@ -9,7 +9,7 @@ int titleToNumber(char* columnTitle) {
 	int count = 0;
 	int sum = 0;
 	while (j < size) {
-		for (i = 65; i < 65+26; i++) {
+		for (i = 65; i < 65+26; i++) { //ASCII大寫A從65開始
 			count++;
 			if (*(columnTitle + size - 1 - j)==i) {
 				sum += count*base;
