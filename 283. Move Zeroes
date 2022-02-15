@@ -8,7 +8,7 @@ void moveZeroes(int* nums, int numsSize){
 
     for (i=0;i < numsSize;i++) {
         for (j=i+1;j < numsSize;j++) {
-            if (*(nums + i) == 0) {
+            if (*(nums + i) == 0) { \\當目前值index=i值為0，就和右邊index=j互換，即可將值為0的元素移到後面
                 tmp = *(nums + i);
                 *(nums + i) = *(nums + j);
                 *(nums + j) = tmp;
