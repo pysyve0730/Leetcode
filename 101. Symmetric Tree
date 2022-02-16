@@ -8,17 +8,17 @@
   };
 
 
-  bool isMirror(struct TreeNode* bnch1, struct TreeNode* bnch2) {
-      if (bnch1 == NULL && bnch2 == NULL) {
+  bool isMirror(struct TreeNode* bnch1, struct TreeNode* bnch2) { 
+      if ((bnch1 == NULL) ^ (bnch2 == NULL)) { //其中一個NULL，另一個非NULL，就false(非對稱)
+          return false;
+      }
+      if(bnch1 == NULL && bnch2 == NULL) { //左右都是NULL(對稱)
           return true;
       }
 
-      if ((bnch1 == NULL) ^ (bnch2 == NULL)) { //其中一個NULL，另一個非NULL，就false
-          return false;
-      }
 
       //目前同層的數相同，左子樹的下一層左=右子樹的下一層右，左子樹的下一層右=右子樹的下一層左，即為對稱
-      return (bnch1->val == bnch2->val) && (isMirror(bnch1->left, bnch2->right) && (isMirror(bnch1->right, bnch2->left))); 
+      return (bnch1->val == bnch2->val) && (isMirror(bnch1->left, bnch2->right) && (isMirror(bnch1->right, bnch2->left))); //第一次第二層值相同，且重複呼叫函式判斷第三層後左右對稱
 
 
   }
