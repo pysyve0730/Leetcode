@@ -10,14 +10,14 @@ int majorityElement(int* nums, int numsSize) {
         int i = 0, j = 0;
         int count = 0;
         for (i = 0; i < numsSize; i++) {
-            if (count == 0) {
+            if (count == 0) {    //當count為0，就跳到和上一個不同的值
                 j = nums[i];
             }
 
-            if (nums[i] == j) {
+            if (nums[i] == j) {       //第一次執行count必為1
                 count++;//注意count變化
             }
-            else {
+            else {                    
                 count--;
             }
 
