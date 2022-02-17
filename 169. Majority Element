@@ -5,6 +5,7 @@ int majorityElement(int* nums, int numsSize) {
 
         int i = 0, j = 0;
         int count = 0;
+        //用Boyer–Moore majority vote algorithm
         for (i = 0; i < numsSize; i++) {
             if (count == 0) {
                 j = nums[i]; //出現第一次，紀錄值
