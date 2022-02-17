@@ -10,19 +10,20 @@ int majorityElement(int* nums, int numsSize) {
         int i = 0, j = 0;
         int count = 0;
         for (i = 0; i < numsSize; i++) {
-            if (count == 0) {    //當count為0，就跳到和上一個不同的值
-                j = nums[i];
+            if (count == 0) {
+                j = nums[i]; //出現第一次，紀錄值
             }
-
-            if (nums[i] == j) {       //第一次執行count必為1
-                count++;//注意count變化
+            
+            //注意count變化
+            if (nums[i] == j) {
+                count++;//如果第一次出現後，接下來有相同值
             }
-            else {                    
-                count--;
+            else {
+                count--;//如果第一次出現後，接下來為不同值
             }
 
         }
-        return j;
+        return j;//回傳最後出現為最多次的值
 
 
     }
