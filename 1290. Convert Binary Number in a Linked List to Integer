@@ -1,0 +1,25 @@
+int getDecimalValue(struct ListNode* head){
+    int size = 0;
+    int sum = 0;
+    struct ListNode* last = head;
+    while(last!=NULL){
+        last = last->next;
+        size++;
+    }
+    
+    while(head!=NULL){
+        
+        
+        sum+=head->val*pow (2.0, --size);
+        
+        
+        head = head->next;
+        
+       
+    }
+    
+    return sum;
+    
+    
+
+}
