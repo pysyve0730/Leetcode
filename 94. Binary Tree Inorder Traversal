@@ -16,3 +16,4 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize){
     *(returnSize) = 0;
     inorder(root,ret,returnSize);
     return ret;  
+}
