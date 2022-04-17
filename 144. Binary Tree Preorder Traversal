@@ -1,0 +1,22 @@
+void preorder(struct TreeNode* root,int* ret,int* size){
+     
+    if(root==NULL){
+        return;
+    }
+    
+    ret[(*size)++] = root->val;
+      
+    preorder(root->left,ret,size);
+    preorder(root->right,ret,size);
+  
+}
+
+
+int* preorderTraversal(struct TreeNode* root, int* returnSize){
+   
+    int *ret = (int*)malloc(sizeof(int)*100);
+    *(returnSize) = 0;
+    preorder(root,ret,returnSize);
+    return ret;  
+
+}
