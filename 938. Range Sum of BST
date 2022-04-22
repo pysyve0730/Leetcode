@@ -2,12 +2,15 @@ int rangeSumBST(struct TreeNode* root, int low, int high){
     int sum;
     struct TreeNode* curr = root;
     if(curr!=NULL){
+        //根節點要同時大於low和小於high
         if(root->val>=low&root->val<=high){
             sum+=root->val;   
         }
+        //左子樹node要大於low,當往左node有值就繼續往左
         if(curr->left!=NULL&curr->val>=low){
             sum+=rangeSumBST(curr->left,low,high);
         }
+        //右子樹node要小於high
         if(curr->right!=NULL&curr->val<=high){
             sum+=rangeSumBST(curr->right,low,high);
         }
