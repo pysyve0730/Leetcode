@@ -1,0 +1,20 @@
+struct TreeNode* searchBST(struct TreeNode* root, int val){
+ 
+    if(root==NULL){
+        return NULL;
+    }
+    
+    if(root->val==val){
+        return root;    
+    }  
+    
+    return root->val<val ? searchBST(root->right,val):searchBST(root->left,val); //將判斷是寫成三元運算子
+    
+    /*if(root->val<val){
+        searchBST(root->right,val);
+    }
+    if(root->val>val){
+        searchBST(root->left,val);
+    }*/
+
+}
