@@ -7,7 +7,7 @@ struct TreeNode* invertTree(struct TreeNode* root){
     struct TreeNode* tmp = root->left;
     root->left = root->right;
     root->right = tmp;
-    //分別往左往右移動
+    //root往左右child node移動
     invertTree(root->left);
     invertTree(root->right);
                
