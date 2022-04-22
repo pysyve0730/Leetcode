@@ -1,16 +1,19 @@
 struct TreeNode* mergeTrees(struct TreeNode* root1, struct TreeNode* root2){
+    //若兩個tree的node都為NULL，回傳NULL
     if(root1==NULL&&root2==NULL){
         return NULL;
     }
+    //若tree1的node為NULL，回傳tree2的node
    if(root1==NULL&&root2!=NULL){
         return root2;
     }
+    //若tree2的node為NULL，回傳tree1的node
     if(root1!=NULL&&root2==NULL){
         return root1;
     }
    
-    root1->val+=root2->val;
-    root1->left = mergeTrees(root1->left,root2->left);
+    root1->val+=root2->val;  //將tree2 node的值加到tree1 node的值
+    root1->left = mergeTrees(root1->left,root2->left);//當tree1往左，tree2也往左移動
     root1->right = mergeTrees(root1->right,root2->right);
     
     return root1;
