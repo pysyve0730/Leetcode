@@ -1,0 +1,16 @@
+struct TreeNode* invertTree(struct TreeNode* root){
+    //如果root為NULL則回傳NULL
+    if(root==NULL){
+        return NULL;
+    }
+    //交換左右node指向的位子
+    struct TreeNode* tmp = root->left;
+    root->left = root->right;
+    root->right = tmp;
+    //分別往左往右移動
+    invertTree(root->left);
+    invertTree(root->right);
+               
+    return root;
+    
+}
