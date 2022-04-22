@@ -1,14 +1,13 @@
+
+//recursion
 struct TreeNode* searchBST(struct TreeNode* root, int val){
- 
     if(root==NULL){
         return NULL;
     }
-    
     if(root->val==val){
         return root;    
     }  
-    
-    return root->val<val ? searchBST(root->right,val):searchBST(root->left,val); //將判斷是寫成三元運算子
+    return root->val<val ? searchBST(root->right,val):searchBST(root->left,val); //將判斷式寫成三元運算子
     
     /*if(root->val<val){
         searchBST(root->right,val);
@@ -17,4 +16,25 @@ struct TreeNode* searchBST(struct TreeNode* root, int val){
         searchBST(root->left,val);
     }*/
 
+}
+
+//iterative
+struct TreeNode* searchBST(struct TreeNode* root, int val){
+    while(root!=NULL){
+        /*if(root->val>val){
+            root = root->left;
+        }
+        if(root->val<val){
+             root = root->right;
+        }
+        */
+        if(root->val==val){
+            return root;
+        }else{
+             root = (root->val>val?root->left:root->right); //將判斷式寫成三元運算子
+        }
+    }
+    return NULL;
+ 
+  
 }
