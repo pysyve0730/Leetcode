@@ -18,7 +18,7 @@ struct ListNode* removeElements(struct ListNode* head, int val){
 //iterative
 struct ListNode* removeElements(struct ListNode* head, int val){
     struct ListNode* dummy = (struct ListNode*)malloc(sizeof(struct ListNode));
-    dummy->next = head; //設定一個假的head在真head前面，當真的head值等於val(要移除)，可以透過dummy直接指到真head的下一個值
+    dummy->next = head; //設定一個假的head在真head前面，當真的head值等於val(要移除)，可以透過dummy直接指到真head的下一個node
     head = dummy;//而開頭即為dummy
     while(head->next!=NULL){
         if(head->next->val==val){
