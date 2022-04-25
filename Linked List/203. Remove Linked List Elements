@@ -14,3 +14,21 @@ struct ListNode* removeElements(struct ListNode* head, int val){
     return head;
     
 }
+
+//iterative
+struct ListNode* removeElements(struct ListNode* head, int val){
+    struct ListNode* dummy = (struct ListNode*)malloc(sizeof(struct ListNode));
+    dummy->next = head; //設定一個假的head在真head前面
+    head = dummy;
+    while(head->next!=NULL){
+        if(head->next->val==val){
+            head->next = head->next->next;
+            
+        }else{
+            head = head->next;
+        }
+    }
+    return dummy->next;
+
+}
+
