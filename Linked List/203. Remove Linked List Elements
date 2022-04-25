@@ -1,0 +1,16 @@
+//recursive
+struct ListNode* removeElements(struct ListNode* head, int val){
+    if(head==NULL){
+        return head;
+    }
+    if(head->val==val){
+        struct ListNode* tmp = head->next;
+        free(head);
+        return removeElements(tmp,val);
+        
+    }
+    head->next = removeElements(head->next,val);
+    
+    return head;
+    
+}
