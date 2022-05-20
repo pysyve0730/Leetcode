@@ -13,3 +13,33 @@ bool hasCycle(struct ListNode *head) {
     }
     return false;
 }
+
+
+//Use Brent Detection Algorithm
+bool hasCycle(struct ListNode *head) {
+    if(head==NULL){
+        return false;
+    }
+    //fast先走
+    struct ListNode *slow = head;
+    struct ListNode *fast = head->next;
+    
+   
+    while(fast!=NULL&&fast->next!=NULL&&fast!=slow){
+        int pow = 1;
+        while(pow--){
+             fast = fast->next;
+        }
+        
+        pow*=2;
+        
+        slow = fast;
+
+
+        if(slow==fast){
+             return true;
+        }
+    
+    }
+    return false;
+}
