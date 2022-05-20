@@ -1,0 +1,39 @@
+struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *headB) {
+    struct ListNode *lenA = headA;
+    struct ListNode *lenB = headB;
+    //計算兩鏈結串列長度
+    int countA = 0;
+    int countB = 0;
+    
+    while(lenA){
+        lenA = lenA->next;
+        countA++;
+    }
+    while(lenB){
+        lenB= lenB->next;
+        countB++;
+    }
+    
+    //兩鏈結串列長度不一，需要對齊
+    int d = countA-countB;
+    while(d>0){
+        headA = headA->next;
+        d--;
+    }
+    while(d<0){
+        headB = headB->next;
+        d++;
+    }
+    
+    while(headA!=NULL&headB!=NULL){
+        //就算兩個節點的值相等，也並不代表它們是同一個節點。因此直接由位址判斷
+        if(headA==headB){
+            return headA;
+        }
+        headA = headA->next;
+        headB = headB->next;
+    
+    }
+    return NULL;
+    
+}
