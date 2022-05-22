@@ -1,0 +1,41 @@
+
+
+bool isPalindrome(struct ListNode* head){
+    struct ListNode* slow = head;
+    struct ListNode* fast = head;
+    struct ListNode* mid = NULL;
+    //利用快慢指針，快每次移動2步=慢每次移動1步，因此快移動到結尾，慢及移動到中點
+    while(fast!=NULL&&fast->next!=NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    //計算mid node,兩種情況分別討論
+    //1->2->3->2->1
+    //1->2->3->5->5->3->2->1
+    if(fast!=NULL){
+        mid = slow->next;
+    }else{
+        mid = slow;
+    }
+    //反轉後半部
+    struct ListNode* fut = NULL;
+    struct ListNode* prev = NULL;
+    while(mid!=NULL){
+        fut = mid->next;
+        mid->next = prev;
+        prev=mid;
+        mid = fut;
+    }
+    
+    //判斷回文
+    while(head!=NULL&&prev!=NULL){
+        if(head->val!=prev->val){
+                return false;    
+        }
+        head = head->next;
+        prev = prev->next;
+    }
+    return true;
+    
+    
+}
