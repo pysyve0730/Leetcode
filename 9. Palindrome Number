@@ -1,0 +1,28 @@
+bool isPalindrome(int x){
+    int y = x;
+    int len = 0;
+    if(x<0){
+        return false;
+    }
+    while(y>0){
+        y = y/10;
+        len++;
+    }
+    int *a = (int*)malloc(sizeof(int)*len);
+    int i = 0;
+    int j = 0;
+    int k = len-1;
+    for(i=0;i<len;i++){
+        a[i] = x%10;  
+        x/=10;
+    }
+    while(j<k){
+        if(a[j]!=a[k]){
+            return false;
+        }
+        j++;
+        k--;
+    }
+    return true;
+
+}
