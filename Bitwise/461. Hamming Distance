@@ -1,0 +1,14 @@
+int hammingDistance(int x, int y){
+    int count = 0;
+    while(x!=0|y!=0){
+        int tmp1 = x&1;
+        int tmp2 = y&1;
+        if(tmp1!=tmp2){
+           count+=1;   
+        }
+        x = x>>1;
+        y = y>>1;   
+    }
+    
+    return count; 
+}
