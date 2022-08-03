@@ -1,0 +1,16 @@
+int sum = 0;
+int deepestLeavesSum(struct TreeNode* root){
+    
+    if(root==NULL){
+        return;
+    }
+    deepestLeavesSum(root->left);
+    printf("layer = %d ",layer(root));
+    if(root->left==NULL&&root->right==NULL){
+        sum+=root->val;
+        // printf("sum = %d ",sum);
+        // printf("%d ",root->val);
+    }
+    deepestLeavesSum(root->right);
+    return sum;
+}
