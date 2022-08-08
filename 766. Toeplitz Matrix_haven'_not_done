@@ -1,0 +1,14 @@
+
+bool isToeplitzMatrix(int** matrix, int matrixSize, int* matrixColSize){
+    int i = 0,j = 0; 
+    
+    matrix = malloc(sizeof(int));
+    for(i=0;i<;i++){
+        for(j=0;j<;j++){
+            if(i==j){
+                  
+            }
+            
+        }
+    }
+}
