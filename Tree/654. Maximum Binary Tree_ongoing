@@ -1,11 +1,11 @@
 struct TreeNode* sub(struct TreeNode* root,int* nums, int numsSize){
-    
+    if(nums[i]>(root->val)){
+        root->left->val = nums[i++];
+    }else{
+        root->right->val = nums[i--];
+    }
 
 }
-
-
-
-
 
 struct TreeNode* constructMaximumBinaryTree(int* nums, int numsSize){
     struct TreeNode *root = (struct TreeNode*)malloc(sizeof(struct TreeNode));
