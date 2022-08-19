@@ -1,0 +1,18 @@
+int kthSmallest(struct TreeNode* root, int k){
+    if(root==NULL){
+        return 0;
+    }
+    int min = root->val;
+    int index = 0;
+    
+    if(root->left<min){
+        index++;
+        kthSmallest(root->left,k);
+    }else{
+        index++;
+        kthSmallest(root->right,k);       
+    }
+        
+    return index;
+
+}
