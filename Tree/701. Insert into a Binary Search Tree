@@ -1,0 +1,15 @@
+struct TreeNode* insertIntoBST(struct TreeNode* root, int val){
+     if(root==NULL){
+        struct TreeNode* tmp = malloc(sizeof(struct TreeNode));
+        tmp->val = val;
+        tmp->left = NULL;
+        tmp->right = NULL;
+        return tmp;
+    }
+    if(root->val<val){
+        root->right = insertIntoBST(root->right, val);//要指定回root,來回傳
+    }else{
+        root->left = insertIntoBST(root->left, val);//要指定回root,來回傳
+    
+    return root;
+}
