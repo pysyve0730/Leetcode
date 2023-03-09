@@ -1,0 +1,38 @@
+char * freqAlphabets(char * s){
+int i = 0;
+int ascii_1 = 97;
+int ascii_2 = 106;
+int m = 0;
+int n = 0;
+
+char *result = (int)malloc(strlen(s));
+for(i=0;i<strlen(s);i++){
+    if(s[i+2]=='#'){
+        for(m=1;m<3;m++){
+            for(n=0;n<7;n++){
+                 if(s[i]==m&&s[i+1]==n){
+                     s[i] = 
+                 }
+            }
+        }
+           
+    
+
+    }else{
+        int j = 0;
+        for(j=ascii_1;j<=105;j++){
+            if(s[i]==j){
+                s[i] = ascii_1;
+            }
+
+        }
+    }
+
+
+
+
+}
+
+
+
+}
