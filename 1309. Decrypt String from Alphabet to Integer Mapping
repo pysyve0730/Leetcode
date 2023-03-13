@@ -1,10 +1,10 @@
 char * freqAlphabets(char * s){
 int i = 0;
 int j = 0;
-int ascii_1_start = 97;
-int ascii_1_end = 105;
-int ascii_2_start = 106;
-int ascii_2_end = 122;
+int ascii_1_start = 97;//a
+int ascii_1_end = 105;//i
+int ascii_2_start = 106;//j
+int ascii_2_end = 122;//z
 int m = 0;
 int n = 0;
 int size = strlen(s);
@@ -32,7 +32,7 @@ char *result = (int*)malloc();
 
           }
       }else{
-        for(j=ascii_1_start;j<=ascii_1_end;j++){
+        for(j='A';j<='i';j++){
             if(s[i]==j){
                 s[i] = (char)(j-96);
             }
