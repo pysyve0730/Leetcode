@@ -32,7 +32,7 @@ char *result = (int*)malloc();
 
           }
       }else{
-        for(j='A';j<='i';j++){
+        for(j='a';j<='i';j++){
             if(s[i]==j){
                 s[i] = (char)(j-96);
             }
