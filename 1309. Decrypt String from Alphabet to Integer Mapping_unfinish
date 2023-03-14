@@ -1,12 +1,7 @@
-char * freqAlphabets(char * s){
-int i = 0;
-int j = 0;
 int ascii_1_start = 97;//a
 int ascii_1_end = 105;//i
 int ascii_2_start = 106;//j
 int ascii_2_end = 122;//z
-int size = strlen(s);
-char *result = (int*)malloc();
 
 
 char *freqAlphabets(char *s) {
