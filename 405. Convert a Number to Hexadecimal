@@ -1,13 +1,15 @@
 char str[100];
-int length = strlen(str);
-char * toHex(int num){
+int length=0;
 
-    while(num!=0){
+char * toHex(int num){
+    length = strlen(str);
+    printf("%d\n",length);
+    while(num!=0&&length>0){
         if(num&1==1){
-            str[length--]='1';
+            str[--length]='1';
 
         }else{
-            str[length--]='0';
+            str[--length]='0';
         }
         num = num>>1;
 
