@@ -1,31 +1,59 @@
+int main(void){
+
 int reg0[8] = {0,1,0,0,1,1,0,0};
 char Hex[] = {"0123456789ABCDEF"};
 int i = 0;
-int left_MSB = 0;//7
-int left_LSB = 0;//4
+
+
 int sum_h = 0;
+//high 4 bits
 for(i=0;i<=3;i++){
     sum_h+=reg0[i]*pow(2,3-i);
 }
-printf("%d\n",sum_h);
 int sum_l = 0;
+//low 4 bits
 for(i=4;i<=7;i++){
     sum_l+=reg0[i]*pow(2,7-i);
 }
-printf("%d\n",sum_l);
 
-switch(sum_l>=10&&sum_l<=15){
-    case 10:
-    sum_l = Hex[10];
-    case 11:
-    sum_l = Hex[11];
-    case 12:
-    sum_l = Hex[12];
-    case 13:
-    sum_l = Hex[13];
-    case 14:
-    sum_l = Hex[14];
-    case 15:
-    sum_l = Hex[15];
+int result[2];
+result[0] = sum_h;
+result[1] = sum_l;
+printf("%d %d \n",result[0],result[1]);
+
+int j = 0;
+
+char result_ch[2];
+while(j<2){
+    if(result[j]<10){
+        result_ch[j] = result[j]+'0';
+    }
+    if(result[j]>=10&&result[j]<=15){
+        switch(result[j]){
+            case 10:
+                result_ch[j] = Hex[10];
+                break;
+            case 11:
+                result_ch[j]  = Hex[11];
+                break;
+            case 12:
+                result_ch[j]  = Hex[12];
+                break;
+            case 13:
+                result_ch[j]  = Hex[13];
+                break;
+            case 14:
+                result_ch[j]  = Hex[14];
+                break;
+            case 15:
+                result_ch[j]  = Hex[15];
+                break;
+
+        }
+     
+    }
+    j++;
 
 }
+
+printf("0X%c%c",result_ch[0],result_ch[1]);
