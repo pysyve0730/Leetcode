@@ -1,0 +1,31 @@
+int reg0[8] = {0,1,0,0,1,1,0,0};
+char Hex[] = {"0123456789ABCDEF"};
+int i = 0;
+int left_MSB = 0;//7
+int left_LSB = 0;//4
+int sum_h = 0;
+for(i=0;i<=3;i++){
+    sum_h+=reg0[i]*pow(2,3-i);
+}
+printf("%d\n",sum_h);
+int sum_l = 0;
+for(i=4;i<=7;i++){
+    sum_l+=reg0[i]*pow(2,7-i);
+}
+printf("%d\n",sum_l);
+
+switch(sum_l>=10&&sum_l<=15){
+    case 10:
+    sum_l = Hex[10];
+    case 11:
+    sum_l = Hex[11];
+    case 12:
+    sum_l = Hex[12];
+    case 13:
+    sum_l = Hex[13];
+    case 14:
+    sum_l = Hex[14];
+    case 15:
+    sum_l = Hex[15];
+
+}
