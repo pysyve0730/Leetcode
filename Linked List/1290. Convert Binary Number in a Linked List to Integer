@@ -1,20 +1,27 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
 int getDecimalValue(struct ListNode* head){
-    int size = 0;
-    int sum = 0;
-    struct ListNode* last = head;
-    //先計算linked list的長度
-    while(last!=NULL){
-        last = last->next;
-        size++;
+    struct ListNode* tmp = head;
+    int len = 0;
+    int result = 0;
+    //Calculate linked list length
+    while(tmp!=NULL){
+        tmp = tmp->next;
+        len++;
     }
-    //再從頭做計算
+
     while(head!=NULL){
-        sum+=head->val*pow (2.0, --size);
+        if(head->val==1){
+            result+=(1<<len-1);
+        }
         head = head->next;
+        len--;
     }
-    
-    return sum;
-    
-    
+    return result;
 
 }
