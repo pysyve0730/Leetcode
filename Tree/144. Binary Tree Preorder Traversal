@@ -5,7 +5,7 @@ void preorder(struct TreeNode* root,int* ret,int* size){
     }
     
     ret[(*size)++] = root->val;
-      
+    //*(ret+((*size)++)) = root->val;   
     preorder(root->left,ret,size);
     preorder(root->right,ret,size);
   
